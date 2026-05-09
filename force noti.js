@@ -1,5 +1,6 @@
 //Made by Wilhelm Tran alongside ai
 //dont remove ts please im begging
+//if you credit me that would be pretty tuff
 
 (function (Scratch) {
   "use strict";
@@ -64,14 +65,14 @@
       titleTextColor: "#a0006a",
       bodyTextColor: "#2a2a2a",
       resizeColor: "#fe72d0",
-      icon: "🌸",
+      icon: "💬",
     }
   };
 
   let currentTheme = "xp";
   function getTheme() { return THEMES[currentTheme] || THEMES.xp; }
 
-  //corner notification
+  //notification
   let cornerStack = [];
   const CORNER_W = 300;
   const CORNER_PAD = 8;
@@ -227,7 +228,7 @@
     const blBtn = win.querySelector(`#${uid}bl`);
     const muBtn = win.querySelector(`#${uid}mu`);
 
-    // Drag
+    //drag stuff
     let dragging = false, dragOffX = 0, dragOffY = 0;
     titlebar.addEventListener("mousedown", (e) => {
       if (e.target.id === `${uid}x` || e.target.closest(`#${uid}d`) || e.target.closest(`#${uid}m`)) return;
@@ -239,7 +240,7 @@
       e.preventDefault();
     });
 
-    // Resize
+    //resizing
     let resizing = false, resizeMode = "";
     let rsX, rsY, rsW, rsH;
     const startResize = (mode) => (e) => {
@@ -289,7 +290,7 @@
     if (ms > 0) setTimeout(() => removeWin(), ms);
   }
 
-  //notification, not pop up 
+  //notif
   function spawnCornerWindow(title, body, duration) {
     if (blocked) return;
     const ms = duration > 0 ? duration : 4000;
@@ -341,7 +342,7 @@
     attachWindowBehaviour(win, uid, ms, null);
   }
 
-  //Spam content
+  //Spam random bulshit
   const SPAM_SETS = {
     virus: [
       ["CRITICAL THREAT DETECTED — IMMEDIATE ACTION REQUIRED", "Rootkit.BlackMatter.Gen2 has been identified in kernel memory. Core system processes are being overwritten. Shutdown imminent if untreated."],
@@ -452,7 +453,7 @@
         color2: "#4280D7",
         color3: "#3373CC",
         blocks: [
-          //corner notification
+          //notif
           {
             opcode: "notify",
             blockType: Scratch.BlockType.COMMAND,
@@ -533,8 +534,7 @@
               TYPE: { type: Scratch.ArgumentType.STRING, menu: "spamMenu", defaultValue: "virus" },
             },
           },
-
-          // --- State ---
+          
           {
             opcode: "isBlocked",
             blockType: Scratch.BlockType.BOOLEAN,
