@@ -1,6 +1,6 @@
 //Made by Wilhelm Tran alongside ai
 //dont remove ts please im begging
-//if you credit me that would be pretty tuff
+//give credit would be pretty tuff
 
 (function (Scratch) {
   "use strict";
